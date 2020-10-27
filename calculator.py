@@ -11,61 +11,19 @@ e.grid(row=0, column=0, columnspan=3, padx=10, pady=10)
 
 # defining functions for the buttons
 
-def button_click(number):
+def button_click(character):
     current = e.get()
     e.delete(0, END)
-    e.insert(0, str(current) + str(number))
+    e.insert(0, str(current) + str(character))
 
 def button_clear():
     e.delete(0, END)
 
-def button_add():
-    first_number = e.get()
-    global f_num
-    global math
-    math = "addition"
-    f_num = int(first_number)
-    e.delete(0, END)
-
-def button_substract():
-    first_number = e.get()
-    global f_num
-    global math
-    math = "substraction"
-    f_num = int(first_number)
-    e.delete(0, END)
-
-def button_multiply():
-    first_number = e.get()
-    global f_num
-    global math
-    math = "multiplicaton"
-    f_num = int(first_number)
-    e.delete(0, END)
-
-def button_divide():
-    first_number = e.get()
-    global f_num
-    global math
-    math = "division"
-    f_num = int(first_number)
-    e.delete(0, END)
-    
 def button_equal():
-    second_number = e.get()
+    equation = e.get()
     e.delete(0, END)
+    e.insert(0, str(equation) + " = " + str(eval(equation)))
 
-    if math == "addition":
-        e.insert(0, f_num + int(second_number))
-
-    if math == "substraction":
-        e.insert(0, f_num - int(second_number))
-
-    if math == "multiplication":
-        e.insert(0, f_num * int(second_number))
-
-    if math == "division":
-        e.insert(0, f_num / int(second_number))
 
 # define buttons
 button1 = Button(root, text="1", padx=40, pady=20, command=lambda: button_click(1))
@@ -79,14 +37,15 @@ button8 = Button(root, text="8", padx=40, pady=20, command=lambda: button_click(
 button9 = Button(root, text="9", padx=40, pady=20, command=lambda: button_click(9))
 button0 = Button(root, text="0", padx=40, pady=20, command=lambda: button_click(0))
 
-buttonAdd = Button(root, text="+", padx=39, pady=20, command=button_add)
 buttonEqual = Button(root, text="=", padx=87, pady=20, command=button_equal)
 buttonClear = Button(root, text="clear", padx=78, pady=20, command=button_clear)
-buttonSubtract = Button(root, text="-", padx=41, pady=20, command=button_substract)
-buttonMultiply = Button(root, text="*", padx=40, pady=20, command=button_multiply)
-buttonDivide = Button(root, text="/", padx=41, pady=20, command=button_divide)
 
-# positioning
+buttonAdd = Button(root, text="+", padx=39, pady=20, command=lambda: button_click(" + "))
+buttonSubtract = Button(root, text="-", padx=41, pady=20, command=lambda: button_click(" - "))
+buttonMultiply = Button(root, text="*", padx=40, pady=20, command=lambda: button_click(" * "))
+buttonDivide = Button(root, text="/", padx=41, pady=20, command=lambda: button_click(" / "))
+
+# positioning buttons
 button1.grid(row=3, column=0)
 button2.grid(row=3, column=1)
 button3.grid(row=3, column=2)
