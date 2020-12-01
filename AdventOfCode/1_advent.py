@@ -15,9 +15,9 @@ for i in range(0, len(lines)):
 key = 2020
 
 for i in range(0, len(lines)):
-    n = key - int(lines[i])
+    n = key - lines[i]
     for j in range(i+1, len(lines)):
-        m = n - int(lines[j])
+        m = n - lines[j]
         for k in range(j+1, len(lines)):
             if lines[k] == m:
                 a1 = lines[i]
@@ -29,5 +29,5 @@ for i in range(0, len(lines)):
 answer1 = a1*a2
 answer2 = a1*a2*a3
 
-print("Answer 1 is ", answer1)
-print("Answer 2 is ", answer2)
+print("Answer 1 is", answer1)
+print("Answer 2 is", answer2)
