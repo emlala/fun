@@ -32,7 +32,7 @@ def tree_calculator(x, y):
     treeCounts.append(a)
 
 # TASK 1
-# 3 steps left, 1 step down
+# 3 steps right, 1 step down
 
 tree_calculator(3, 1)
 
