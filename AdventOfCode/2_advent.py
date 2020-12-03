@@ -1,7 +1,15 @@
+# Advent of Code 2020 day 2
+# https://adventofcode.com/
+
+# The task is to check whether "passwords" in the data set are valid or not, and count the number of valid passwords.
+# Each line of the data set contains two digits, a key letter, and the password.
+# In task 1 the digits indicate the minimum and maximum occurrences of the key letter in the password.
+# In task 2 the digits indicate exact positions in the password, exactly one of them must contain the key letter.
+
 import re
 
-with open('data_2.txt') as f:
-    lines = f.readlines()
+with open('2_data.txt') as f:
+	lines = f.readlines()
 
 lines = [i.strip('\n') for i in lines]
 
